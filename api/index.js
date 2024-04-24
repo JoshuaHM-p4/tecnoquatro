@@ -1,0 +1,40 @@
+// imports
+import express from 'express'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+
+// constants
+const app = express()
+const PORT = 5050
+
+// middlewares
+dotenv.config()
+app.use(express.json())
+
+mongoose.connect('link for the db')
+    .then(() => {
+        console.log('Connected to MongoDb')
+    }).catch((error) => {
+        console.log(`Error: ${error}`)
+    })
+
+// listen
+app.listen(PORT, () => {
+    console.log("Server is running on port " + PORT)
+})
+
+// routes
+app.get('/', (req, res, next) => {
+    res.json({message: "Hello world"})
+})
+
+// error validatton middleware
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || 500
+    const message = err.message
+    return res.status(statusCode).send({
+        success: false,
+        message: message,
+        statusCode: statusCode
+    })
+})
