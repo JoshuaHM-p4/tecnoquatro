@@ -11,8 +11,10 @@ const PORT = 5050
 dotenv.config()
 app.use(express.json())
 
-mongoose.connect('link for the db')
-    .then(() => {
+const MONGODB_URI = process.env.MONGODB_URI
+
+mongoose.connect(MONGODB_URI)
+    .then((result) => {
         console.log('Connected to MongoDb')
     }).catch((error) => {
         console.log(`Error: ${error}`)
