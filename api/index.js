@@ -6,6 +6,7 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import authRoutes from './routes/auth-router.js'
 import anonRoutes from './routes/anon-router.js'
+import userRoutes from './routes/user-router.js'
 
 // constants
 const app = express()
@@ -37,6 +38,7 @@ app.get('/', (req, res, next) => {
 })
 app.use('/api/auth', authRoutes)
 app.use('/api/anon', anonRoutes)
+app.use('/api/user', userRoutes)
 
 // error validatton middleware
 app.use((err, req, res, next) => {
