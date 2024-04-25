@@ -1,20 +1,16 @@
 import express from 'express';
-import errorValidation from '../utils/errorHandler';
+import {
+    signUp,
+    signIn,
+    logout
+} from '../controllers/auth-controller';
 
 const router = express.Router();
 
-router.get('/signup', (req, res, next) => {
-    const {username, email, password, confirmPassword} = req.body;
-    try {
-        if (!username || !email || !password || !confirmPassword) {
-            return next(errorValidation(400, 'All fields are required'));
-        }
-        if (password !== confirmPassword) {
-            return next(errorValidation(400, 'Passwords do not match'));
-        }
-    } catch (error) {
-        next(error)
-    }
-})
+router.post('/signup', signUp)
+
+router.post('/signin', signIn)
+
+router.get('/logout', logout)
 
 export default router;
