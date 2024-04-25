@@ -32,7 +32,7 @@ app.get('/', (req, res, next) => {
     res.json({message: "Hello world"})
 })
 app.use('/api/auth', authRoutes)
-app.use('/api/anon', )
+app.use('/api/anon', anonRoutes)
 
 // error validatton middleware
 app.use((err, req, res, next) => {
