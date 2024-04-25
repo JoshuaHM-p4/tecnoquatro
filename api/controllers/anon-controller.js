@@ -1,5 +1,6 @@
-import User from '../models/user-model';
-import AnonMsg from '../models/anon-model';
+import User from '../models/user-model.js';
+import AnonMsg from '../models/anonmsg-model.js';
+import {errorHandler} from '../utils/errorHandler.js'
 
 export const sendAnonMsg = async (req, res, next) => {
     const {userId} = req.params;
@@ -13,6 +14,7 @@ export const sendAnonMsg = async (req, res, next) => {
             message: req.body.message,
         });
         anonMsg.save();
+        res.status(201).json("Anonymous message sent");
     } catch (error) {
         next(error)
     }
