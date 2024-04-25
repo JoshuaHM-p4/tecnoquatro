@@ -2,6 +2,8 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import authRoutes from './routes/authRoutes.js'
+import anonRoutes from './routes/anonRoutes.js'
 
 // constants
 const app = express()
@@ -29,6 +31,8 @@ app.listen(PORT, () => {
 app.get('/', (req, res, next) => {
     res.json({message: "Hello world"})
 })
+app.use('/api/auth', authRoutes)
+app.use('/api/anon', )
 
 // error validatton middleware
 app.use((err, req, res, next) => {
