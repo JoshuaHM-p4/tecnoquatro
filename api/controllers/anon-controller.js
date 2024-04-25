@@ -13,7 +13,7 @@ export const sendAnonMsg = async (req, res, next) => {
             receiver: userId,
             message: req.body.message,
         });
-        anonMsg.save();
+        await anonMsg.save();
         res.status(201).json("Anonymous message sent");
     } catch (error) {
         next(error)

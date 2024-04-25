@@ -22,7 +22,7 @@ export const signUp = async (req, res, next) => {
             email,
             password: hashedPassword,
         });
-        user.save();
+        await user.save();
         res.status(201).json("User added");
     } catch (error) {
         next(error)
