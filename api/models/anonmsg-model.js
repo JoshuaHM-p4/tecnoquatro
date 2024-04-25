@@ -5,8 +5,8 @@ const anonMsgSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    userRef: {
-        type: mongoose.Schema.Types.ObjectId,
+    receiver: {
+        type: String,
         ref: 'User',
         required: true,
     },
