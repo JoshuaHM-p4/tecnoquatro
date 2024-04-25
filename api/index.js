@@ -2,8 +2,10 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import authRoutes from './routes/authRoutes.js'
-import anonRoutes from './routes/anonRoutes.js'
+import cors from 'cors'
+import cookieParser from 'cookie-parser'
+import authRoutes from './routes/auth-router.js'
+import anonRoutes from './routes/anon-router.js'
 
 // constants
 const app = express()
@@ -12,6 +14,8 @@ const PORT = 5050
 // middlewares
 dotenv.config()
 app.use(express.json())
+app.use(cors())
+app.use(cookieParser())
 
 const MONGODB_URI = process.env.MONGODB_URI
 

@@ -1,7 +1,7 @@
 import express from 'express'
 import { 
     sendAnonMsg
- } from '../controllers/anon-controller'
+ } from '../controllers/anon-controller.js'
 
 const router = express.Router()
 
