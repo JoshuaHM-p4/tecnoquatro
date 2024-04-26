@@ -1,0 +1,51 @@
+.landing {
+}
+
+.landing > * {
+    font-family: Viga;
+
+}
+
+.header {
+    position: fixed;
+    width: 100vw;
+    background-color: #33248e;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links > li {
+    list-style: none;
+}
+
+.nav-links > li > a  {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
+
+.intro-page {
+    padding-top: 70px;
+    height: calc(100vh - 70px);
+    background-color: lightblue;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+}
