@@ -20,7 +20,6 @@ const Landing = () => {
         <div className='intro'>
           <h1>Beyond Imagination</h1>
           <h1>Within Reach </h1>
-          <h2>Hi David </h2>
         </div>
       </main>
       <main className='students-page'>
