@@ -1,4 +1,5 @@
 import React from 'react'
+import LandingStudents from '../components/LandingStudents';
 import '../styles/Landing.scss'
 import { IoMdMenu } from "react-icons/io";
 
@@ -26,9 +27,7 @@ const Landing = () => {
           </div>
         </div>
       </main>
-      <main className='students-page'>
-
-      </main>
+      <LandingStudents />
       <main className='login-page'>
 
       </main>
