@@ -1,52 +1,90 @@
 .landing {
-}
+    font-family: 'Inter', sans-serif;
 
-.landing > * {
-    font-family: Viga;
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        z-index: 1;
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1px 120px;
 
-}
+            img {
+                height: 50px;
+                margin: 10px;
+            }
 
-.header {
-    position: fixed;
-    width: 100vw;
-    background-color: #33248e;
-}
+            .menu-icon {
+                display: none;
+                cursor: pointer;
+            }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 50px;
-}
+            .nav-links {
+                display: flex;
+                gap: 15px;
 
-.logo {
-    width: 60px;
-    height: 60px;
-    padding-bottom: 5px;
-}
+                li {
+                    list-style: none;
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        font-weight: 700;
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+            }
 
-.nav-links > li {
-    list-style: none;
-}
+            @media screen and (max-width: 768px) {
+                padding: 1px 20px;
+                .nav-links {
+                    display: none;
+                }
+                .menu-icon {
+                    display: block;
+                    color: white;
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+            } 
+        }
+    }
+    
+    .intro-page {
+        background: linear-gradient(255deg, rgba(0, 0, 0, 0.00) 17.71%, rgba(0, 0, 0, 0.45) 82.29%), url('/images/bg.png') lightgray 50% / cover no-repeat;
+        height: 100vh;
+        position: relative;
 
-.nav-links > li > a  {
-    text-decoration: none;
-    color: white;
-    font-weight: 300;
-}
-
-.intro-page {
-    padding-top: 100px;
-    height: calc(100vh - 70px);
-    background-color: lightblue;
-}
-
-.intro {
-    display: flex;
-    justify-content: center;
+        .intro {
+            position: absolute;
+            left: 114px;
+            bottom: 30px;
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .intro-text {
+                color: white;
+                font-size: 100px;
+                font-weight: bold;
+                text-align: center;
+                .span {
+                    color: #FFD700;
+                }
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .intro {
+                left: 50px;
+                bottom: 50px;
+                .intro-text {
+                    font-size: 70px;
+                }
+            }
+        } 
+    }
 }

@@ -1,5 +1,7 @@
 import React from 'react'
+import LandingStudents from '../components/LandingStudents';
 import '../styles/Landing.scss'
+import { IoMdMenu } from "react-icons/io";
 
 const Landing = () => {
   return (
@@ -7,24 +9,25 @@ const Landing = () => {
       {/* absoulute */}
       <header className='header'>
         <nav className='nav'>
-            <img src="/yellow-logo.png" alt="" className='logo'/>
+            <img src="/images/yellow-logo.png" alt="" className='logo'/>
+            <IoMdMenu className='menu-icon'/>
             <ul className='nav-links'>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>Officers</a></li>
-                <li><a href="#">Login</a></li>
+                <li className='.li'><a href='#'>Home</a></li>
+                <li className='.li'><a href='#'>Officers</a></li>
+                <li className='.li'><a href="#">Login</a></li>
             </ul>
         </nav>
       </header>
       {/* end absoulute */}
       <main className='intro-page'>
         <div className='intro'>
-          <h1>Beyond Imagination</h1>
-          <h1>Within Reach </h1>
+          <div className='intro-text'>
+            <div>TECHNO</div>
+            <div className='span'>QUATRO</div>
+          </div>
         </div>
       </main>
-      <main className='students-page'>
-
-      </main>
+      <LandingStudents />
       <main className='login-page'>
 
       </main>

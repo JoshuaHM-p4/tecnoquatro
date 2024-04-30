@@ -1,0 +1,114 @@
+.landing-students {
+    min-height: 1024px;
+    padding: 75px 120px;
+    background: linear-gradient(180deg, #42235A 0%, #8D4AC0 100%);
+    color: white;
+    .students-intro-text-container {
+        max-width: 512px;
+        .students-intro-head {
+            color: #FFF;
+            font-size: 37.6px;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 10px;
+        }
+        .students-intro-text1 {
+            color: #FFF;
+            text-align: justify;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        .students-intro-text2 {
+            color: #FFF;
+            text-align: justify;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 20px;
+        }
+    }
+
+    .students-category-nav {
+        margin-top: 10px;
+        ul {
+            display: flex;
+            padding-top: 30px;
+            gap: 15px;
+            li {
+                list-style: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .students-avatars-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 70px;
+        margin-top: 30px;
+        .students-avatar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                object-fit: contain;
+            }
+            .student-info-container {
+                margin-top: 20px;
+                color: #FFF;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                text-align: center;
+                .student-name {
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px 60px;
+        .students-avatars-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            .students-avatar {
+                img {
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 50%px;
+                }
+                .student-info-container {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        padding: 20px 60px;
+        .students-avatars-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            .students-avatar {
+                img {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%px;
+                }
+                .student-info-container {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
