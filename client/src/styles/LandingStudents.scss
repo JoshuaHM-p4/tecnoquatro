@@ -37,10 +37,43 @@
             display: flex;
             padding-top: 30px;
             gap: 15px;
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal; 
+
             li {
                 list-style: none;
                 cursor: pointer;
+
             }
+
+            li.All.active {
+                color: #EBE331;
+                text-decoration-line: underline; 
+            }
+
+            li.Solar.active {
+                color: #FFAA05; 
+                text-decoration-line: underline; 
+            }
+
+            li.Nebula.active {
+                color: #FB4BFF; 
+                text-decoration-line: underline; 
+            }
+
+            li.Stardust.active {
+                color: #27D8FF; 
+                text-decoration-line: underline; 
+            }
+
+            li.Vortex.active { 
+                color: #06FA76; 
+                text-decoration-line: underline; 
+            }
+
+
         }
     }
 

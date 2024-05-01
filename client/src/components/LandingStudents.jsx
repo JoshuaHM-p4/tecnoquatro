@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/LandingStudents.scss'
 
+// Store description data
+const descriptionData = {
+  "default": "United, we <strong>Celestial Kins</strong> form an unstoppable cosmic force achieving greatness beyond mere ideas.",
+  "Solar": "The <span style='color: #FFAA05; font-weight: bold;'>Solar</span> class officers are our guiding stars, illuminating the path for our cosmic endeavors with their leadership and vision.",
+  "Nebula": "The <span style='color: #FB4BFF; font-weight: bold;'>Nebula</span> creators craft visuals and presence, meticulously documenting our cosmic knowledge and moderating our celestial discourse.",
+  "Stardust": "The <span style='color: #27D8FF; font-weight: bold;'>Stardust</span> are the diligent curators, meticulously documenting our cosmic knowledge and moderating our celestial discourse.",
+  "Vortex": "The <span style='color: #06FA76; font-weight: bold;'>Vortex</span> subject masters, with their cosmic domains, wielding their expertise to tackle the most complex celestial challenges."
+};
+
 const LandingStudents = () => {
+
     // State variables to manage category and student data
     const [category, setCategory] = useState('All'); // Default category is 'All'
     const [studentData, setStudentsData] = useState([]); // Initially, no student data
-
     // Fetch student data when the component mounts
     useEffect(() => {
       fetch('./students.json') // Fetch the JSON file
@@ -60,11 +69,12 @@ const LandingStudents = () => {
       }
     };
 
-
     // Get the members to show based on the selected category
     const membersToShow = findMembersByCategory(category);
 
     console.log(membersToShow);
+
+    
 
   return (
     <main className='landing-students'>
@@ -75,18 +85,18 @@ const LandingStudents = () => {
           Our diverse TecnoQuatro Extraterrestrials transcends boundaries, fusing celestial talents.
         </p>
         <p className='students-intro-text2'>
-          United, we Celestial Kins form an unstoppable cosmic force achieving greatness beyond mere ideas
+          <p className='students-intro-text2' dangerouslySetInnerHTML={{ __html: descriptionData[category] || descriptionData.default }} />
         </p>
       </div>
 
       <nav className='students-category-nav'>
         {/* Display the category buttons */}
         <ul>
-          <li onClick={() => handleCategoryClick('All')}>All</li>
-          <li onClick={() => handleCategoryClick('Solar')}>Solar</li>
-          <li onClick={() => handleCategoryClick('Nebula')}>Nebula</li>
-          <li onClick={() => handleCategoryClick('Stardust')}>Stardust</li>
-          <li onClick={() => handleCategoryClick('Vortex')}>Vortex</li>
+          <li className={category === 'All' ? 'active All' : 'All'} onClick={() => handleCategoryClick('All')}>All</li>
+          <li className={category === 'Solar' ? 'active Solar' : 'Solar'} onClick={() => handleCategoryClick('Solar')}>Solar</li>
+          <li className={category === 'Nebula' ? 'active Nebula' : 'Nebula'} onClick={() => handleCategoryClick('Nebula')}>Nebula</li>
+          <li className={category === 'Stardust' ? 'active Stardust' : 'Stardust'} onClick={() => handleCategoryClick('Stardust')}>Stardust</li>
+          <li className={category === 'Vortex' ? 'active Vortex' : 'Vortex'} onClick={() => handleCategoryClick('Vortex')}>Vortex</li>
         </ul>
       </nav>
 
