@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import '../styles/LandingStudents.scss'
 
 const LandingStudents = () => {
-    const [category, setCategory] = useState('All');
-    const [studentData, setStudentsData] = useState([]);
-
     // State variables to manage category and student data
     const [category, setCategory] = useState('All'); // Default category is 'All'
     const [studentData, setStudentsData] = useState([]); // Initially, no student data
