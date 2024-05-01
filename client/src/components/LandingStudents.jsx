@@ -11,7 +11,6 @@ const descriptionData = {
 };
 
 const LandingStudents = () => {
-
     // State variables to manage category and student data
     const [category, setCategory] = useState('All'); // Default category is 'All'
     const [studentData, setStudentsData] = useState([]); // Initially, no student data
@@ -74,7 +73,7 @@ const LandingStudents = () => {
 
     console.log(membersToShow);
 
-    
+
 
   return (
     <main className='landing-students'>
