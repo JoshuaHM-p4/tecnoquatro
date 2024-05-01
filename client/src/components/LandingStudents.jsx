@@ -16,16 +16,16 @@ const LandingStudents = () => {
     const [studentData, setStudentsData] = useState([]); // Initially, no student data
     // Fetch student data when the component mounts
     useEffect(() => {
-      fetch('./students.json') // Fetch the JSON file
-        .then(response => response.json()) // Parse the JSON response
-        .then(data => {
-          // Set the fetched data to the state variable studentsData
-          setStudentsData(data);
-        })
-        .catch(error => {
-          // Log any errors that occur during fetching
-          console.error('Error fetching JSON data:', error);
-        });
+        const fetchStudentsData = async () => {
+          try {
+            const res = await fetch('./students.json');
+            const data = await res.json();
+            setStudentsData(data);
+          } catch (error) {
+            console.error('Error fetching JSON data:', error);
+          }
+        }
+        fetchStudentsData();
     }, []); // Empty dependency array ensures this runs only once when the component mounts
 
 
