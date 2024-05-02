@@ -2,8 +2,8 @@
     {
         "name": "Joshua Mistal",
         "img": "/images/students/joshua.jpg",
-        "roles": ["President", "Discrete Math | Object Oriented Programming"],
-        "categories": ["Solar", "Vortex"]
+        "roles": ["President", "Discrete Math | Object Oriented Programming", "Developer"],
+        "categories": ["Solar", "Vortex", "Lunar"]
     },
     {
         "name": "Karylle Quinto",
@@ -56,8 +56,8 @@
     {
         "name": "David Bato-Bato",
         "img": "/images/students/david.jpg",
-        "roles": ["Social Media Developer"],
-        "categories": ["Nebula"]
+        "roles": ["Social Media Developer", "Developer"],
+        "categories": ["Nebula", "Lunar"]
     },
     {
         "name": "Joanne Silmaro",
@@ -124,5 +124,12 @@
         "img": "/images/students/eaila.jpg",
         "roles": ["Bridging"],
         "categories": ["Vortex"]
+    },
+
+    {
+        "name": "Aidan Tiu",
+        "img": "/images/students/aidan.jpg",
+        "roles": ["Developer"],
+        "categories": ["Lunar"]
     }
 ]
