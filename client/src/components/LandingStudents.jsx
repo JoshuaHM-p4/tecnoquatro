@@ -7,7 +7,8 @@ const descriptionData = {
   "Solar": "The <span style='color: #FFAA05; font-weight: bold;'>Solar</span> class officers are our guiding stars, illuminating the path for our cosmic endeavors with their leadership and vision.",
   "Nebula": "The <span style='color: #FB4BFF; font-weight: bold;'>Nebula</span> creators craft visuals and presence, meticulously documenting our cosmic knowledge and moderating our celestial discourse.",
   "Stardust": "The <span style='color: #27D8FF; font-weight: bold;'>Stardust</span> are the diligent curators, meticulously documenting our cosmic knowledge and moderating our celestial discourse.",
-  "Vortex": "The <span style='color: #06FA76; font-weight: bold;'>Vortex</span> subject masters, with their cosmic domains, wielding their expertise to tackle the most complex celestial challenges."
+  "Vortex": "The <span style='color: #06FA76; font-weight: bold;'>Vortex</span> subject masters, with their cosmic domains, wielding their expertise to tackle the most complex celestial challenges.",
+  "Lunar": "The <span style='color: #FF4B4B; font-weight: bold;'>Lunar</span> are the celestial caretakers, ensuring the well-being of our cosmic community and fostering a culture of inclusivity and belonging."
 };
 
 const LandingStudents = () => {
@@ -36,8 +37,8 @@ const LandingStudents = () => {
     const findMembersByCategory = (category) => {
       // If the selected category is 'All', return all members except those with empty names
       if (category === 'All') {
-        // Filter out students with empty names
-        return studentData.filter(student => student.name.trim() !== "");
+        // Filter out students with empty names and the last student
+        return studentData.filter((student, index) => index !== studentData.length - 1 && student.name.trim() !== "");
       } else {
         // Otherwise, return members whose categories include the selected category
 
@@ -71,7 +72,6 @@ const LandingStudents = () => {
     // Get the members to show based on the selected category
     const membersToShow = findMembersByCategory(category);
 
-    console.log(membersToShow);
 
 
 
@@ -96,6 +96,7 @@ const LandingStudents = () => {
           <li className={category === 'Nebula' ? 'active Nebula' : 'Nebula'} onClick={() => handleCategoryClick('Nebula')}>Nebula</li>
           <li className={category === 'Stardust' ? 'active Stardust' : 'Stardust'} onClick={() => handleCategoryClick('Stardust')}>Stardust</li>
           <li className={category === 'Vortex' ? 'active Vortex' : 'Vortex'} onClick={() => handleCategoryClick('Vortex')}>Vortex</li>
+          <li className={category === 'Lunar' ? 'active Lunar' : 'Lunar'} onClick={() => handleCategoryClick('Lunar')}>Lunar</li>
         </ul>
       </nav>
 
