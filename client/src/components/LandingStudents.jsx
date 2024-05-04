@@ -74,7 +74,6 @@ const LandingStudents = () => {
 
 
 
-
   return (
     <main className='landing-students'>
 
