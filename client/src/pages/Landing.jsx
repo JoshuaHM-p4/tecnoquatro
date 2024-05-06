@@ -3,6 +3,7 @@ import LandingStudents from '../components/LandingStudents';
 import '../styles/Landing.scss'
 import { IoMdMenu } from "react-icons/io";
 import LandingForms from '../components/LandingForms';
+import LandingExtra from '../components/LandingExtra';
 
 const Landing = () => {
   return (
@@ -30,6 +31,7 @@ const Landing = () => {
       </main>
       <LandingStudents />
       <LandingForms />
+      <LandingExtra />
       <main className='login-page'>
 
       </main>
