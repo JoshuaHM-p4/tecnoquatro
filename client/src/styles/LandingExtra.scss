@@ -1,44 +1,47 @@
-.landing-extra{
+.landing-extra {
     display: flex;
     width: 100%;
     height: 64rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative; /* Add position relative to act as a reference for absolute positioning */
     background: linear-gradient(180deg, #121156 0%, #1A1922 100%), linear-gradient(180deg, #FFF 0%, #999 100%);
 
-    .middle-text{
+    .middle-text {
         color: #FFF;
         font-family: Inter;
         font-size: 2.35rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-    
+        padding-bottom:20rem;
+        z-index: 1;
     }
 
-    .spaceship{
+    .spaceship {
         position: absolute;
+        padding-bottom: 10rem;
         left: 2.3125rem;
-        margin-top: 13rem;
+        z-index: 1;
 
-        &:nth-child(2){
+        &:nth-child(2) {
             transform: rotate(-54.342deg); 
-            position: absolute;
             right: 3.5rem;
             left: auto;
-            margin-top: 25rem;
+            padding-top: 10rem;
         }
-
     }
 
     .mountain {
-        position: absolute;
-        margin-top: 47.22rem;
-        padding-top: 1rem;
+        position: absolute; /* Ensure it's absolutely positioned relative to the .landing-extra */
         left: 0;
         right: 0;
+        bottom: 0; /* Adjusted bottom property */
         width: 100%; 
         height: auto;
+        max-height: 100%; /* Ensure the image doesn't exceed the container's height */
+        object-fit: contain;
+    
     }
 }
